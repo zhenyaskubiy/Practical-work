@@ -1,8 +1,9 @@
 def insertion_sort(arr):
+  # Перебираємо елементи починаючи з індексу 1
     for i in range(1, len(arr)):
-        key=arr[i] 
+        key=arr[i] # Запам'ятовуємо поточний елемент
         j=i-1
-
+# Порівнюємо key з попередніми елементами та зсуваємо їх
         while j>=0 and key<arr[j]:
             arr[j+1]=arr[j]
             j-=1

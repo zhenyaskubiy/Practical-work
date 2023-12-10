@@ -1,6 +1,4 @@
 import random
-
-# Символи та їх вартість
 symbols = {
     u"\U0001F352": "Cherry",
     u"\U0001F514": "Bell",
@@ -47,7 +45,7 @@ def one_armed_bandit():
 
     print("Гра завершена.")
 
-# Запуск гри
+    
 one_armed_bandit()
 import datetime
 def printTimeStamp(name):

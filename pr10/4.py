@@ -18,8 +18,8 @@ def create_gradient(width, height, start_color, end_color):
 
 width = 300
 height = 200
-start_color = (0, 0, 255, 255)  # Початковий колір: червоний з повним альфа-каналом
-end_color = (255, 204, 0, 255)  # Кінцевий колір: синій з нульовим альфа-каналом
+start_color = (0, 0, 255, 255) 
+end_color = (255, 204, 0, 255) 
 
 gradient_image = create_gradient(width, height, start_color, end_color)
-gradient_image.show()  # Показати зображення
+gradient_image.show()  
