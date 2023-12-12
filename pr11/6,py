@@ -1,0 +1,30 @@
+import pandas as pd
+url = 'https://raw.githubusercontent.com/x5or6/A-Visual-History-of-Nobel-Prize-Winners/master/archive.csv'
+nobel_df = pd.read_csv(url, sep=',')
+
+rows, columns = nobel_df.shape
+print(f"Рядків: {rows}, Стовпців: {columns}")
+
+column_names = nobel_df.columns.tolist()
+print("Назви стовпців:", column_names)
+
+data_types = nobel_df.dtypes
+print("Типи даних у кожному стовпці:")
+print(data_types)
+
+sorted_by_name = nobel_df.sort_values(by='Full Name')
+print("Датафрейм, відсортований за стовпцем Full Name:")
+print(sorted_by_name)
+
+gender_counts = nobel_df['Sex'].value_counts()
+print("Кількість чоловіків та жінок, які отримали Нобелівські премії:")
+print(gender_counts)
+
+top_country = nobel_df['Birth Country'].value_counts().idxmax()
+print("Країна, уродженці якої отримали найбільше Нобелівських премій:", top_country)
+
+first_female_winner = nobel_df[nobel_df['Sex'] == 'Female'].sort_values(by='Year').iloc[0]['Full Name']
+print("Ім'я першої жінки, яка отримала Нобелівську премію:", first_female_winner)
+
+posthumous_winner = nobel_df[nobel_df['Death Date'].notnull()]['Full Name'].tolist()
+print("Науковці, які отримали Нобелівську премію посмертно:", posthumous_winner)
